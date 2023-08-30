@@ -224,7 +224,7 @@ require("lazy").setup({
                     lualine_y = { "progress" },
                     lualine_z = { "location"  },
                 },
-                extensions = { "nvim-tree", "toggleterm", "aerial", "man", "quickfix" }
+                extensions = { "nvim-tree", "aerial", "man", "quickfix" }
             }
         end
     },
@@ -380,27 +380,6 @@ require("lazy").setup({
                 end
             }
         end
-    },
-
-    {
-        "akinsho/toggleterm.nvim",
-        keys = "<c-t>",
-        opts = {
-            size = function(term)
-                if term.direction == "horizontal" then
-                    return 15
-                elseif term.direction == "vertical" then
-                    return vim.o.columns * 0.3
-                end
-            end,
-            open_mapping = "<c-t>",
-            shade_terminals = true,
-            start_in_insert = true,
-            persist_size = true,
-            direction = "vertical",
-            close_on_exit = true,
-            shell = vim.env.SHELL or vim.opt.shell
-        }
     },
 
     {
@@ -567,8 +546,6 @@ require("lazy").setup({
                 local bufname = vim.api.nvim_buf_get_name(bufnr)
 
                 if filetype == "NvimTree" and (vim.wo.winfixwidth or vim.wo.winfixheight) then
-                    return "filetype"
-                elseif filetype == "toggleterm" then
                     return "filetype"
                 end
 
