@@ -47,7 +47,6 @@ return {
 
     {
         "vuki656/package-info.nvim",
-        version = "*",
         dependencies = { "MunifTanjim/nui.nvim" },
         opts = {},
     },

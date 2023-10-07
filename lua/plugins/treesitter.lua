@@ -1,7 +1,6 @@
 return {
     {
         "nvim-treesitter/nvim-treesitter",
-        version = "*",
         build = ":TSUpdate",
         dependencies = { "yioneko/nvim-yati", "yioneko/vim-tmindent" },
         config = function()

@@ -9,7 +9,6 @@ return {
     -- BUG: not working in neovide with multigrid: https://github.com/folke/noice.nvim/issues/17
     {
         "folke/noice.nvim",
-        version = "*",
         dependencies = { "MunifTanjim/nui.nvim" },
         opts = {
             cmdline = {
@@ -145,11 +144,12 @@ return {
 
     {
         "lukas-reineke/indent-blankline.nvim",
+	main = "ibl",
         opts = {
-            buftype_exclude = { "terminal" },
-            filetype_exclude = { "alpha", "lazy", "help", "man", "NvimTree", "aerial", "noice", "markdown" },
-            space_char_blankline = " ",
-            show_current_context = true
+            exclude = {
+                filetypes = { "alpha", "lazy", "help", "man", "NvimTree", "aerial", "noice", "markdown" },
+                buftypes = { "terminal" },
+            },
         }
     },
 }
