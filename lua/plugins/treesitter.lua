@@ -2,7 +2,6 @@ return {
     {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
-        dependencies = { "yioneko/nvim-yati", "yioneko/vim-tmindent" },
         config = function()
             require("nvim-treesitter.configs").setup {
                 -- NOTE: comment parser is slow
@@ -11,18 +10,7 @@ return {
                     enable = true,
                 },
                 indent = {
-                    enable = false,
-                },
-                yati = {
                     enable = true,
-                    default_lazy = true,
-                    default_fallback = function(lnum, computed, bufnr)
-                        if vim.tbl_contains(tm_fts, vim.bo[bufnr].filetype) then
-                            return require("tmindent").get_indent(lnum, bufnr) + computed
-                        end
-                        -- or any other fallback methods
-                        return require("nvim-yati.fallback").vim_auto(lnum, computed, bufnr)
-                    end,
                 },
                 incremental_selection = {
                     enable = true,
