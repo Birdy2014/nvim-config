@@ -102,9 +102,6 @@ return {
                     return icon .. " " .. bufname
                 end
             end,
-            hide = {
-                only_win = true
-            }
         }
     },
 }
